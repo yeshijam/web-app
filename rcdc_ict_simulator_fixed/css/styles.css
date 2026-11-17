@@ -1,0 +1,72 @@
+:root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: #0f172a;
+      background-color: #f8fafc;
+      overflow-x: hidden;
+    }
+    .font-mono-tech {
+      font-family: var(--font-mono);
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    /* 3D Floating Callout Labels */
+    .label-3d {
+      position: absolute;
+      pointer-events: auto;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      z-index: 15;
+      line-height: 1.1;
+    }
+    .label-3d:hover {
+      z-index: 30;
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+    /* Clean Full-Screen 3D Viewport Backgrounds */
+    .lab-viewport-light {
+      background: radial-gradient(circle at 50% 42%, #ffffff 0%, #e2e8f0 68%, #cbd5e1 100%);
+    }
+    .lab-viewport-dark {
+      background: radial-gradient(circle at 50% 42%, #1e293b 0%, #0f172a 70%, #020617 100%);
+    }
+    /* Subtle shake animation when wrong item is dragged in game */
+    @keyframes gentleShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+    .shake-error {
+      animation: gentleShake 0.32s ease-in-out;
+    }
+    /* Custom Ghost Preview when dragging UI cards over 3D canvas */
+    #dragGhost {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+    /* Floating 3D Hover & Live Precision Alignment Tooltip */
+    #hoverTooltip3D {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -135%);
+      display: none;
+    }
